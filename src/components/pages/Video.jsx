@@ -39,7 +39,7 @@ export default function Video() {
           {isLoading ? (
             <RelatedvideLoader />
           ) : !isError && !isLoading && video?.id ? (
-            <RelatedVideos />
+            <RelatedVideos title={title} id={id} />
           ) : (
             <Error message={"There was an error"} />
           )}

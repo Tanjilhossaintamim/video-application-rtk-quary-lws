@@ -11,7 +11,18 @@ export const apiSlice = createApi({
     getSingelVideo: builder.query({
       query: (videoId) => `/videos/${videoId}`,
     }),
+    getRelatedVideos: builder.query({
+      query: ({ title, id }) => {
+        const tags = title.split(" ");
+        const quaryString = tags.map((tag) => `title_like=${tag}`).join("&");
+        return `/videos?${quaryString}&_limit=4&id_ne=${id}`;
+      },
+    }),
   }),
 });
 
-export const { useGetVideosQuery, useGetSingelVideoQuery } = apiSlice;
+export const {
+  useGetVideosQuery,
+  useGetSingelVideoQuery,
+  useGetRelatedVideosQuery,
+} = apiSlice;
