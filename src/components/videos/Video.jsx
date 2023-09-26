@@ -8,7 +8,7 @@ export default function Video({ video }) {
     <div className="col-span-12 sm:col-span-6 md:col-span-3 duration-300 hover:scale-[1.03]">
       <div className="w-full flex flex-col">
         <div className="relative">
-          <Link to={`/videos/${id}`}>
+          <Link to={`/videos/${title.split(" ").join("-")}/${id}`}>
             <img src={thumbnail} className="w-full h-auto" alt={title} />
           </Link>
 
@@ -25,7 +25,7 @@ export default function Video({ video }) {
           />
 
           <div className="flex flex-col">
-            <Link to="/videos/1">
+            <Link to={`/videos/${title.split(" ").join("-")}/${id}`}>
               <p className="text-slate-900 text-sm font-semibold">{title}</p>
             </Link>
             <span className="text-gray-400 text-xs hover:text-gray-600">
