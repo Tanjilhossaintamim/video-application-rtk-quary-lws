@@ -4,11 +4,7 @@ import Video from "./Video";
 import Error from "../ui/Error";
 
 export default function Videos() {
-  const {
-    data: videos,
-    isLoading,
-    isError,
-  } = useGetVideosQuery(undefined, { refetchOnMountOrArgChange: 300 });
+  const { data: videos, isLoading, isError } = useGetVideosQuery();
 
   // decisan what will render
   let content = null;
