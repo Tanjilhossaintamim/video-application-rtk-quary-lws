@@ -4,7 +4,7 @@ import editImage from "../../assets/edit.svg";
 import PropTypes from "prop-types";
 
 export default function Description({ video }) {
-  const { title, description, date } = video || {};
+  const { id, title, description, date } = video || {};
   return (
     <div>
       <h1 className="text-lg font-semibold tracking-tight text-slate-800">
@@ -20,7 +20,7 @@ export default function Description({ video }) {
             <div className="shrink-0">
               <img className="w-5 block" src={editImage} alt="Edit" />
             </div>
-            <Link to="/videos/edit/1">
+            <Link to={`/videos/edit/${id}`}>
               <span className="text-sm leading-[1.7142857] text-slate-600 cursor-pointer">
                 Edit
               </span>
