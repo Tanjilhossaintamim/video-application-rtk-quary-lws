@@ -26,6 +26,7 @@ export default function Video() {
     content = (
       <>
         <Player link={link} title={title} />
+
         <Description video={video} />
       </>
     );
